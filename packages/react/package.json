@@ -34,8 +34,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@awesome-elements/layout": "0.1.0",
-    "awesome-layout": "0.1.1"
+    "@awesome-elements/layout": "0.1.0"
   },
   "peerDependencies": {
     "react": ">=16.7.0",
