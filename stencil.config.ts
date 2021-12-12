@@ -8,11 +8,13 @@ export const config: Config = {
       componentCorePackage: '@awesome-elements/layout',
       proxiesFile: './packages/react/src/components/stencil-generated/index.ts',
       includeDefineCustomElements: true,
-      loaderDir: './loader',
     }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+    },
+    {
+      type: 'dist-custom-elements',
     },
     {
       type: 'docs-readme',
