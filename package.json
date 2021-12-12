@@ -42,5 +42,13 @@
     "jest-cli": "^26.6.3",
     "puppeteer": "^10.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "layout",
+    "grid",
+    "js",
+    "web",
+    "component",
+    "webcomponent"
+  ]
 }

@@ -48,5 +48,10 @@
       "node_modules",
       "dist"
     ]
-  }
+  },
+  "keywords": [
+    "layout",
+    "grid",
+    "react"
+  ]
 }
