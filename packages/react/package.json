@@ -3,6 +3,7 @@
   "sideEffects": false,
   "version": "0.1.5",
   "description": "React specific wrapper for @awesome-elements/layout",
+  "homepage": "https://awesome-elements.github.io/layout/",
   "repository": {
     "type": "git",
     "url": "https://github.com/awesome-elements/layout.git"
