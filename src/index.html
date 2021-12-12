@@ -11,7 +11,17 @@
 </head>
 
 <body>
-
+  <div id="wrap-component">
+    <h1>Wrap</h1>
+    <p>The <b>wrap</b> element applies a maximum width for its inner contents and leaves margins to both sides.</p>
+    <div style="width: 100%; border: 1px solid cornflowerblue; text-align: center">
+      outer container spanning across the whole width
+      <awesome-wrap style="height: 100%; width: 100%">
+        <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; text-align: center">inner container
+          with limited maximum width</div>
+      </awesome-wrap>
+    </div>
+  </div>
 </body>
 
 </html>
