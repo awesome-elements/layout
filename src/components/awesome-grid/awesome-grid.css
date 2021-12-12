@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+#main-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: var(--grid-template-rows);
+  grid-template-columns: var(--grid-template-columns);
+  row-gap: var(--grid-row-gap);
+  column-gap: var(--grid-column-gap);
+}

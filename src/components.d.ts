@@ -39,6 +39,42 @@ export namespace Components {
          */
         "xxl": number | 'auto' | '';
     }
+    interface AwesomeGrid {
+        /**
+          * The gap between each column.
+         */
+        "columnGap": string;
+        /**
+          * The column definitions. It receives a string defines the size of each column, split by space. eg. 1fr 2fr 50px 1fr
+         */
+        "columns": string;
+        /**
+          * The gap between each row.
+         */
+        "rowGap": string;
+        /**
+          * The row definitions. It receives a string defines the size of each row, split by space. eg. 1fr 2fr 50px 1fr
+         */
+        "rows": string;
+    }
+    interface AwesomeGridItem {
+        /**
+          * The column index of this item.
+         */
+        "column": number;
+        /**
+          * The number of columns that this item spanning in the grid.
+         */
+        "columnSpan": number;
+        /**
+          * The row index of this item.
+         */
+        "row": number;
+        /**
+          * The number of rows that this item spanning in the grid.
+         */
+        "rowSpan": number;
+    }
     interface AwesomeRatioBox {
         /**
           * The factor of height.
@@ -65,6 +101,18 @@ declare global {
         prototype: HTMLAwesomeFlexItemElement;
         new (): HTMLAwesomeFlexItemElement;
     };
+    interface HTMLAwesomeGridElement extends Components.AwesomeGrid, HTMLStencilElement {
+    }
+    var HTMLAwesomeGridElement: {
+        prototype: HTMLAwesomeGridElement;
+        new (): HTMLAwesomeGridElement;
+    };
+    interface HTMLAwesomeGridItemElement extends Components.AwesomeGridItem, HTMLStencilElement {
+    }
+    var HTMLAwesomeGridItemElement: {
+        prototype: HTMLAwesomeGridItemElement;
+        new (): HTMLAwesomeGridItemElement;
+    };
     interface HTMLAwesomeRatioBoxElement extends Components.AwesomeRatioBox, HTMLStencilElement {
     }
     var HTMLAwesomeRatioBoxElement: {
@@ -80,6 +128,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "awesome-flex": HTMLAwesomeFlexElement;
         "awesome-flex-item": HTMLAwesomeFlexItemElement;
+        "awesome-grid": HTMLAwesomeGridElement;
+        "awesome-grid-item": HTMLAwesomeGridItemElement;
         "awesome-ratio-box": HTMLAwesomeRatioBoxElement;
         "awesome-wrap": HTMLAwesomeWrapElement;
     }
@@ -117,6 +167,42 @@ declare namespace LocalJSX {
          */
         "xxl"?: number | 'auto' | '';
     }
+    interface AwesomeGrid {
+        /**
+          * The gap between each column.
+         */
+        "columnGap"?: string;
+        /**
+          * The column definitions. It receives a string defines the size of each column, split by space. eg. 1fr 2fr 50px 1fr
+         */
+        "columns"?: string;
+        /**
+          * The gap between each row.
+         */
+        "rowGap"?: string;
+        /**
+          * The row definitions. It receives a string defines the size of each row, split by space. eg. 1fr 2fr 50px 1fr
+         */
+        "rows"?: string;
+    }
+    interface AwesomeGridItem {
+        /**
+          * The column index of this item.
+         */
+        "column"?: number;
+        /**
+          * The number of columns that this item spanning in the grid.
+         */
+        "columnSpan"?: number;
+        /**
+          * The row index of this item.
+         */
+        "row"?: number;
+        /**
+          * The number of rows that this item spanning in the grid.
+         */
+        "rowSpan"?: number;
+    }
     interface AwesomeRatioBox {
         /**
           * The factor of height.
@@ -132,6 +218,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "awesome-flex": AwesomeFlex;
         "awesome-flex-item": AwesomeFlexItem;
+        "awesome-grid": AwesomeGrid;
+        "awesome-grid-item": AwesomeGridItem;
         "awesome-ratio-box": AwesomeRatioBox;
         "awesome-wrap": AwesomeWrap;
     }
@@ -142,6 +230,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "awesome-flex": LocalJSX.AwesomeFlex & JSXBase.HTMLAttributes<HTMLAwesomeFlexElement>;
             "awesome-flex-item": LocalJSX.AwesomeFlexItem & JSXBase.HTMLAttributes<HTMLAwesomeFlexItemElement>;
+            "awesome-grid": LocalJSX.AwesomeGrid & JSXBase.HTMLAttributes<HTMLAwesomeGridElement>;
+            "awesome-grid-item": LocalJSX.AwesomeGridItem & JSXBase.HTMLAttributes<HTMLAwesomeGridItemElement>;
             "awesome-ratio-box": LocalJSX.AwesomeRatioBox & JSXBase.HTMLAttributes<HTMLAwesomeRatioBoxElement>;
             "awesome-wrap": LocalJSX.AwesomeWrap & JSXBase.HTMLAttributes<HTMLAwesomeWrapElement>;
         }

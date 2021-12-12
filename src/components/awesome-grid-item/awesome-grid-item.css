@@ -1,0 +1,9 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  grid-row-start: var(--grid-row, auto);
+  grid-row-end: span var(--grid-row-span, 1);
+  grid-column-start: var(--grid-column, auto);
+  grid-column-end: span var(--grid-column-span, 1);
+}

@@ -93,6 +93,34 @@
         </awesome-flex-item>
       </awesome-flex>
     </div>
+    <div id="grid">
+      <h1>Grid</h1>
+      <p>The <b>grid</b> system helps to make a grid view structure.</p>
+      <awesome-grid rows="1fr 2fr 50px 1fr" row-gap="0.5rem" columns="1fr 2fr 100px 1fr" column-gap="0.5rem"
+        style="height: 300px; width: 100%">
+        <awesome-grid-item column-span="4">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">1</div>
+        </awesome-grid-item>
+        <awesome-grid-item row="2" column="4" row-span="3">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">2</div>
+        </awesome-grid-item>
+        <awesome-grid-item row="4" column-span="3">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">3</div>
+        </awesome-grid-item>
+        <awesome-grid-item row="2" row-span="2">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">4</div>
+        </awesome-grid-item>
+        <awesome-grid-item column-span="2">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">5</div>
+        </awesome-grid-item>
+        <awesome-grid-item row="3" column="3">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">6</div>
+        </awesome-grid-item>
+        <awesome-grid-item>
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue">7</div>
+        </awesome-grid-item>
+      </awesome-grid>
+    </div>
     <div id="ratio-box">
       <h1>Ratio Box</h1>
       <p>The <b>ratio box</b> element helps to maintain a width/height ratio based on the width.</p>
