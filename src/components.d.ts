@@ -6,10 +6,55 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AwesomeFlex {
+        /**
+          * The number of portions that the flex container is split into.
+         */
+        "baseFraction": number;
+    }
+    interface AwesomeFlexItem {
+        "containerSizeChanged": (size: number) => Promise<void>;
+        /**
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "lg": number | 'auto' | '';
+        /**
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "md": number | 'auto' | '';
+        /**
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "sm": number | 'auto' | '';
+        /**
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xl": number | 'auto' | '';
+        /**
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xs": number | 'auto' | '';
+        /**
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xxl": number | 'auto' | '';
+    }
     interface AwesomeWrap {
     }
 }
 declare global {
+    interface HTMLAwesomeFlexElement extends Components.AwesomeFlex, HTMLStencilElement {
+    }
+    var HTMLAwesomeFlexElement: {
+        prototype: HTMLAwesomeFlexElement;
+        new (): HTMLAwesomeFlexElement;
+    };
+    interface HTMLAwesomeFlexItemElement extends Components.AwesomeFlexItem, HTMLStencilElement {
+    }
+    var HTMLAwesomeFlexItemElement: {
+        prototype: HTMLAwesomeFlexItemElement;
+        new (): HTMLAwesomeFlexItemElement;
+    };
     interface HTMLAwesomeWrapElement extends Components.AwesomeWrap, HTMLStencilElement {
     }
     var HTMLAwesomeWrapElement: {
@@ -17,13 +62,49 @@ declare global {
         new (): HTMLAwesomeWrapElement;
     };
     interface HTMLElementTagNameMap {
+        "awesome-flex": HTMLAwesomeFlexElement;
+        "awesome-flex-item": HTMLAwesomeFlexItemElement;
         "awesome-wrap": HTMLAwesomeWrapElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwesomeFlex {
+        /**
+          * The number of portions that the flex container is split into.
+         */
+        "baseFraction"?: number;
+    }
+    interface AwesomeFlexItem {
+        /**
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "lg"?: number | 'auto' | '';
+        /**
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "md"?: number | 'auto' | '';
+        /**
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "sm"?: number | 'auto' | '';
+        /**
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xl"?: number | 'auto' | '';
+        /**
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xs"?: number | 'auto' | '';
+        /**
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+         */
+        "xxl"?: number | 'auto' | '';
+    }
     interface AwesomeWrap {
     }
     interface IntrinsicElements {
+        "awesome-flex": AwesomeFlex;
+        "awesome-flex-item": AwesomeFlexItem;
         "awesome-wrap": AwesomeWrap;
     }
 }
@@ -31,6 +112,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "awesome-flex": LocalJSX.AwesomeFlex & JSXBase.HTMLAttributes<HTMLAwesomeFlexElement>;
+            "awesome-flex-item": LocalJSX.AwesomeFlexItem & JSXBase.HTMLAttributes<HTMLAwesomeFlexItemElement>;
             "awesome-wrap": LocalJSX.AwesomeWrap & JSXBase.HTMLAttributes<HTMLAwesomeWrapElement>;
         }
     }
