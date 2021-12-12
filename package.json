@@ -25,7 +25,8 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "lint": "eslint src/**/*{.ts,.tsx}"
+    "lint": "eslint src/**/*{.ts,.tsx}",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@stencil/core": "^2.7.0",
