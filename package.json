@@ -1,7 +1,7 @@
 {
-  "name": "@awesome-elements/template",
+  "name": "@awesome-elements/layout",
   "version": "0.0.1",
-  "description": "Awesome-Elements Template",
+  "description": "Awesome-Elements Layout",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,7 +12,7 @@
   "unpkg": "dist/awesome-elements/awesome-elements.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/awesome-elements/components-template.git"
+    "url": "https://github.com/awesome-elements/layout.git"
   },
   "files": [
     "dist/",
