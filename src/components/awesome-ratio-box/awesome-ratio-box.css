@@ -1,0 +1,20 @@
+:host {
+  --ratio: calc(var(--height-factor) / var(--width-factor));
+
+  display: block;
+  width: 100%;
+}
+
+#outer-container {
+  position: relative;
+  width: 100%;
+  padding-top: calc(var(--ratio) * 100%);
+}
+
+#inner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

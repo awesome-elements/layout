@@ -39,6 +39,16 @@ export namespace Components {
          */
         "xxl": number | 'auto' | '';
     }
+    interface AwesomeRatioBox {
+        /**
+          * The factor of height.
+         */
+        "heightFactor": number;
+        /**
+          * The factor of width.
+         */
+        "widthFactor": number;
+    }
     interface AwesomeWrap {
     }
 }
@@ -55,6 +65,12 @@ declare global {
         prototype: HTMLAwesomeFlexItemElement;
         new (): HTMLAwesomeFlexItemElement;
     };
+    interface HTMLAwesomeRatioBoxElement extends Components.AwesomeRatioBox, HTMLStencilElement {
+    }
+    var HTMLAwesomeRatioBoxElement: {
+        prototype: HTMLAwesomeRatioBoxElement;
+        new (): HTMLAwesomeRatioBoxElement;
+    };
     interface HTMLAwesomeWrapElement extends Components.AwesomeWrap, HTMLStencilElement {
     }
     var HTMLAwesomeWrapElement: {
@@ -64,6 +80,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "awesome-flex": HTMLAwesomeFlexElement;
         "awesome-flex-item": HTMLAwesomeFlexItemElement;
+        "awesome-ratio-box": HTMLAwesomeRatioBoxElement;
         "awesome-wrap": HTMLAwesomeWrapElement;
     }
 }
@@ -100,11 +117,22 @@ declare namespace LocalJSX {
          */
         "xxl"?: number | 'auto' | '';
     }
+    interface AwesomeRatioBox {
+        /**
+          * The factor of height.
+         */
+        "heightFactor"?: number;
+        /**
+          * The factor of width.
+         */
+        "widthFactor"?: number;
+    }
     interface AwesomeWrap {
     }
     interface IntrinsicElements {
         "awesome-flex": AwesomeFlex;
         "awesome-flex-item": AwesomeFlexItem;
+        "awesome-ratio-box": AwesomeRatioBox;
         "awesome-wrap": AwesomeWrap;
     }
 }
@@ -114,6 +142,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "awesome-flex": LocalJSX.AwesomeFlex & JSXBase.HTMLAttributes<HTMLAwesomeFlexElement>;
             "awesome-flex-item": LocalJSX.AwesomeFlexItem & JSXBase.HTMLAttributes<HTMLAwesomeFlexItemElement>;
+            "awesome-ratio-box": LocalJSX.AwesomeRatioBox & JSXBase.HTMLAttributes<HTMLAwesomeRatioBoxElement>;
             "awesome-wrap": LocalJSX.AwesomeWrap & JSXBase.HTMLAttributes<HTMLAwesomeWrapElement>;
         }
     }
