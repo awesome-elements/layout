@@ -11,108 +11,121 @@
 </head>
 
 <body>
-  <div id="flex-component">
-    <h1>Flex</h1>
-    <p>The <b>flex</b> system provides an easy and flexible way to apply responsive layout for differernt screen sizes.
-    </p>
-    <p>For below examples, adjusting the screen width to see the difference.</p>
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+  </style>
 
-    <p>
-      Considering the horizonal space of a <b>flex</b> element is split into 12 portions, you can define how much spaces
-      a <b>flex item</b> can take for different view breakpoints.
-    </p>
-    <awesome-flex>
-      <awesome-flex-item xs="12" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12</div>
-      </awesome-flex-item>
-      <awesome-flex-item xs="12" sm="5" md="4" lg="3" xl="2" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=5, md=4, lg=3, xl=2
-        </div>
-      </awesome-flex-item>
-      <awesome-flex-item xs="12" sm="7" md="4" lg="5" xl="7" xxl="8" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=7, md=4, lg=5,
-          xl=7, xxl=8</div>
-      </awesome-flex-item>
-      <awesome-flex-item xs="12" md="4" lg="4" xl="3" xxl="2" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=7, md=4, lg=5,
-          xl=7, xxl=8</div>
-      </awesome-flex-item>
-      <awesome-flex-item xs="12" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12</div>
-      </awesome-flex-item>
-    </awesome-flex>
+  <awesome-wrap>
+    <h1 style="text-align: center">Awesome-Elements Layout</h1>
+    <div id="flex">
+      <h1>Flex</h1>
+      <p>The <b>flex</b> system provides an easy and flexible way to apply responsive layout for differernt screen
+        sizes.
+      </p>
+      <p>For below examples, adjusting the screen width to see the difference.</p>
 
-    <p>Not setting a <b>flex item</b> size means all items would share the space equally.</p>
-    <awesome-flex>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-    </awesome-flex>
+      <p>
+        Considering the horizonal space of a <b>flex</b> element is split into 12 portions, you can define how much
+        spaces
+        a <b>flex item</b> can take for different view breakpoints.
+      </p>
+      <awesome-flex>
+        <awesome-flex-item xs="12" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12</div>
+        </awesome-flex-item>
+        <awesome-flex-item xs="12" sm="5" md="4" lg="3" xl="2" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=5, md=4, lg=3,
+            xl=2
+          </div>
+        </awesome-flex-item>
+        <awesome-flex-item xs="12" sm="7" md="4" lg="5" xl="7" xxl="8" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=7, md=4, lg=5,
+            xl=7, xxl=8</div>
+        </awesome-flex-item>
+        <awesome-flex-item xs="12" md="4" lg="4" xl="3" xxl="2" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12, sm=7, md=4, lg=5,
+            xl=7, xxl=8</div>
+        </awesome-flex-item>
+        <awesome-flex-item xs="12" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid skyblue; padding: 0.5rem">xs=12</div>
+        </awesome-flex-item>
+      </awesome-flex>
 
-    <awesome-flex>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-      <awesome-flex-item xs="6" md="3" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">xs=6, md=3</div>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-    </awesome-flex>
+      <p>Not setting a <b>flex item</b> size means all items would share the space equally.</p>
+      <awesome-flex>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+      </awesome-flex>
 
-    <p>Setting a <b>flex item</b> size to <b>auto</b> make it fit its content's width.</p>
-    <awesome-flex>
-      <awesome-flex-item xs="auto" style="padding: 0.25rem">
-        <div style="height: 3rem; width: 10rem; border: 1px solid cornflowerblue; padding: 0.5rem">auto (child: 10rem)
-        </div>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
-      </awesome-flex-item>
-    </awesome-flex>
-  </div>
-  <div id="ratio-box-component">
-    <h1>Ratio Box</h1>
-    <p>The <b>ratio box</b> element helps to maintain a width/height ratio based on the width.</p>
-    <awesome-flex>
-      <awesome-flex-item style="padding: 0.25rem">
-        <awesome-ratio-box width-factor="16" height-factor="9">
-          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">16:9</div>
-        </awesome-ratio-box>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <awesome-ratio-box width-factor="3" height-factor="4">
-          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">3:4</div>
-        </awesome-ratio-box>
-      </awesome-flex-item>
-      <awesome-flex-item style="padding: 0.25rem">
-        <awesome-ratio-box width-factor="1" height-factor="1">
-          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">1:1</div>
-        </awesome-ratio-box>
-      </awesome-flex-item>
-    </awesome-flex>
-  </div>
-  <div id="wrap-component">
-    <h1>Wrap</h1>
-    <p>The <b>wrap</b> element applies a maximum width for its inner contents and leaves margins to both sides.</p>
-    <div style="width: 100%; border: 1px solid cornflowerblue; text-align: center">
-      outer container spanning across the whole width
-      <awesome-wrap style="height: 100%; width: 100%">
-        <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; text-align: center">inner container
-          with limited maximum width</div>
-      </awesome-wrap>
+      <awesome-flex>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+        <awesome-flex-item xs="6" md="3" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">xs=6, md=3</div>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+      </awesome-flex>
+
+      <p>Setting a <b>flex item</b> size to <b>auto</b> make it fit its content's width.</p>
+      <awesome-flex>
+        <awesome-flex-item xs="auto" style="padding: 0.25rem">
+          <div style="height: 3rem; width: 10rem; border: 1px solid cornflowerblue; padding: 0.5rem">auto (child: 10rem)
+          </div>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <div style="height: 3rem; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">not set</div>
+        </awesome-flex-item>
+      </awesome-flex>
     </div>
-  </div>
+    <div id="ratio-box">
+      <h1>Ratio Box</h1>
+      <p>The <b>ratio box</b> element helps to maintain a width/height ratio based on the width.</p>
+      <awesome-flex>
+        <awesome-flex-item style="padding: 0.25rem">
+          <awesome-ratio-box width-factor="16" height-factor="9">
+            <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">16:9</div>
+          </awesome-ratio-box>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <awesome-ratio-box width-factor="3" height-factor="4">
+            <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">3:4</div>
+          </awesome-ratio-box>
+        </awesome-flex-item>
+        <awesome-flex-item style="padding: 0.25rem">
+          <awesome-ratio-box width-factor="1" height-factor="1">
+            <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; padding: 0.5rem">1:1</div>
+          </awesome-ratio-box>
+        </awesome-flex-item>
+      </awesome-flex>
+    </div>
+    <div id="wrap">
+      <h1>Wrap</h1>
+      <p>The <b>wrap</b> element applies a maximum width for its inner contents and leaves margins to both sides.</p>
+      <div style="width: 100%; border: 1px solid cornflowerblue; text-align: center">
+        outer container spanning across the whole width
+        <awesome-wrap style="height: 100%; width: 100%">
+          <div style="height: 100%; width: 100%; border: 1px solid cornflowerblue; text-align: center">inner container
+            with limited maximum width</div>
+        </awesome-wrap>
+      </div>
+    </div>
+  </awesome-wrap>
 </body>
 
 </html>
