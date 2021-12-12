@@ -9,8 +9,11 @@ CORE_PROJECT_PATH=$(pwd)
 REACT_PROJECT_PATH=./packages/react
 
 cd $REACT_PROJECT_PATH
-npm i --save-exact awesome-layout@$CORE_PROJECT_VERSION
-npm version $CORE_PROJECT_VERSION
-git add package*.json
-git commit -m "react package updated to $CORE_PROJECT_VERSION"
-npm publish
+if npm i --save-exact awesome-layout@$CORE_PROJECT_VERSION ; then
+    npm version $CORE_PROJECT_VERSION
+    git add package*.json
+    git commit -m "react package updated to $CORE_PROJECT_VERSION"
+    npm publish
+else
+    echo "Failed to fetch the new version of core package."
+fi
