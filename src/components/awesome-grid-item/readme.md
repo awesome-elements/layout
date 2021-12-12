@@ -1,6 +1,6 @@
 # awesome-grid-item
 
-
+Also check [Grid](../awesome-grid/readme.md).
 
 <!-- Auto Generated Below -->
 

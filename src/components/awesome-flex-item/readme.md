@@ -1,6 +1,6 @@
 # awesome-flex-item
 
-
+Also check [Flex](../awesome-flex/readme.md).
 
 <!-- Auto Generated Below -->
 
