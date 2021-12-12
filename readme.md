@@ -4,7 +4,9 @@
 
 An awesome way to simplify web layout.
 
-[Demo](https://lidachao111222.github.io/awesome-layout/)
+[Demo](https://awesome-elements.github.io/layout/)
+
+[![Edit layout](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/layout-7uhuv?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Installation
 
