@@ -1,5 +1,5 @@
 import { Component, Host, h, ComponentInterface, Element, Prop, Watch } from '@stencil/core';
-import { updateCSSVariable } from '../../utils/access-css-variable';
+import { updateCSSVariable } from '@awesome-elements/utils';
 
 @Component({
   tag: 'awesome-grid',

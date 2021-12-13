@@ -1,6 +1,5 @@
 import { Component, Host, h, ComponentInterface, Element, Prop, Watch } from '@stencil/core';
-import { updateCSSVariable } from '../../utils/access-css-variable';
-import { observeResize } from '../../utils/observe-resize';
+import { updateCSSVariable, observeResize } from '@awesome-elements/utils';
 
 @Component({
   tag: 'awesome-flex',
