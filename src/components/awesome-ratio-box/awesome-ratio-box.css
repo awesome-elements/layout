@@ -18,3 +18,7 @@
   bottom: 0;
   right: 0;
 }
+
+::slotted(*) {
+  box-sizing: border-box;
+}
