@@ -7,7 +7,8 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@awesome-elements/layout',
       proxiesFile: './packages/react/src/components/stencil-generated/index.ts',
-      includeDefineCustomElements: true,
+      includeImportCustomElements: true,
+      includeDefineCustomElements: false,
     }),
     {
       type: 'dist',
@@ -15,6 +16,7 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
+      dir: 'components',
     },
     {
       type: 'docs-readme',

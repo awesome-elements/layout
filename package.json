@@ -16,6 +16,7 @@
     "url": "https://github.com/awesome-elements/layout.git"
   },
   "files": [
+    "components/",
     "dist/",
     "loader/"
   ],
