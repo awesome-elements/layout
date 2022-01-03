@@ -1,5 +1,6 @@
+@import '../../utils/border-box-sizing.css';
+
 :host {
-  box-sizing: border-box;
   display: flex;
   max-width: var(--max-width);
   flex: var(--flex);

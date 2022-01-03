@@ -1,3 +1,4 @@
+@import '../../utils/border-box-sizing.css';
 @import '../../utils/view-breakpoints.css';
 
 :host {

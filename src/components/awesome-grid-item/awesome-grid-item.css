@@ -1,3 +1,5 @@
+@import '../../utils/border-box-sizing.css';
+
 :host {
   display: block;
   height: 100%;
