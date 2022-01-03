@@ -2,6 +2,8 @@
 @import '../../utils/view-breakpoints.css';
 
 :host {
+  --fraction: '';
+
   display: flex;
   flex-wrap: wrap;
   width: 100%;
