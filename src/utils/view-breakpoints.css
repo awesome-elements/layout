@@ -1,17 +1,17 @@
 :host {
   /**
-   * @prop --xs: The view breakpoint for xs. (Default: 0)
-   * @prop --sm: The view breakpoint for sm. (Default: 540)
-   * @prop --md: The view breakpoint for md. (Default: 720)
-   * @prop --lg: The view breakpoint for lg. (Default: 960)
-   * @prop --xl: The view breakpoint for xl. (Default: 1140)
-   * @prop --xxl: The view breakpoint for xxl. (Default: 1320)
+   * @prop --awesome-xs: The view breakpoint for xs. (Default: 0)
+   * @prop --awesome-sm: The view breakpoint for sm. (Default: 540)
+   * @prop --awesome-md: The view breakpoint for md. (Default: 720)
+   * @prop --awesome-lg: The view breakpoint for lg. (Default: 960)
+   * @prop --awesome-xl: The view breakpoint for xl. (Default: 1140)
+   * @prop --awesome-xxl: The view breakpoint for xxl. (Default: 1320)
    */
 
-  --xs: 0;
-  --sm: 540;
-  --md: 720;
-  --lg: 960;
-  --xl: 1140;
-  --xxl: 1320;
+  --awesome-xs: 0;
+  --awesome-sm: 540;
+  --awesome-md: 720;
+  --awesome-lg: 960;
+  --awesome-xl: 1140;
+  --awesome-xxl: 1320;
 }

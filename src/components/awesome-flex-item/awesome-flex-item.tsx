@@ -8,7 +8,7 @@ import { updateCSSVariable } from '@awesome-elements/utils';
 })
 export class AwesomeFlexItem implements ComponentInterface {
   private set fraction(value: number | 'auto' | '') {
-    updateCSSVariable('--fraction', value?.toString(), this.hostElement);
+    updateCSSVariable('--awesome-flex-fraction', value?.toString(), this.hostElement);
     this.updateFlexCSSVariable(value);
   }
 
@@ -121,10 +121,10 @@ export class AwesomeFlexItem implements ComponentInterface {
   }
 
   private updateFlexCSSVariable(value: string | number) {
-    updateCSSVariable('--max-width', 'calc(var(--fraction) / var(--base-fraction) * 100%)', this.hostElement);
+    updateCSSVariable('--awesome-flex-item-max-width', 'calc(var(--awesome-flex-fraction) / var(--awesome-flex-base-fraction) * 100%)', this.hostElement);
     switch (true) {
       case value !== '' && !Number.isNaN(+value):
-        updateCSSVariable('--flex', '0 0 var(--max-width)', this.hostElement);
+        updateCSSVariable('--flex', '0 0 var(--awesome-flex-item-max-width)', this.hostElement);
         break;
       case value === 'auto':
         updateCSSVariable('--flex', '0 0 auto', this.hostElement);

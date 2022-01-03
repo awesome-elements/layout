@@ -47,10 +47,10 @@ export class AwesomeWrap implements ComponentInterface {
   }
 
   private getOuterBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--outer-${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-outer-${name}`);
   }
 
   private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
   }
 }

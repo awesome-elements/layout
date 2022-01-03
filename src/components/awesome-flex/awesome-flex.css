@@ -2,7 +2,7 @@
 @import '../../utils/view-breakpoints.css';
 
 :host {
-  --fraction: '';
+  --awesome-flex-fraction: '';
 
   display: flex;
   flex-wrap: wrap;

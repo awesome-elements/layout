@@ -1,7 +1,7 @@
 @import '../../utils/border-box-sizing.css';
 
 :host {
-  --ratio: calc(var(--height-factor) / var(--width-factor));
+  --awesome-ratio-box-ratio: calc(var(--awesome-height-factor) / var(--awesome-width-factor));
 
   display: block;
   width: 100%;
@@ -10,7 +10,7 @@
 #outer-container {
   position: relative;
   width: 100%;
-  padding-top: calc(var(--ratio) * 100%);
+  padding-top: calc(var(--awesome-ratio-box-ratio) * 100%);
 }
 
 #inner-container {

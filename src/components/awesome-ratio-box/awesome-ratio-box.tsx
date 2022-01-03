@@ -16,7 +16,7 @@ export class AwesomeRatioBox implements ComponentInterface {
 
   @Watch('heightFactor')
   heightFactorChanged(heightFactor: number) {
-    updateCSSVariable('--height-factor', heightFactor.toString(), this.hostElement);
+    updateCSSVariable('--awesome-height-factor', heightFactor.toString(), this.hostElement);
   }
 
   /**
@@ -26,7 +26,7 @@ export class AwesomeRatioBox implements ComponentInterface {
 
   @Watch('widthFactor')
   widthFactorChanged(widthFactor: number) {
-    updateCSSVariable('--width-factor', widthFactor.toString(), this.hostElement);
+    updateCSSVariable('--awesome-width-factor', widthFactor.toString(), this.hostElement);
   }
 
   connectedCallback() {

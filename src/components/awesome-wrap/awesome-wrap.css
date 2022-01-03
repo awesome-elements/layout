@@ -3,26 +3,26 @@
 
 :host {
   /**
-   * @prop --container-background: Background of the inner container
-   * @prop --container-padding: Padding of the inner container
+   * @prop --awesome-wrap-background: Background of the inner container
+   * @prop --awesome-wrap-padding: Padding of the inner container
    */
-  --container-background: none;
-  --container-padding: 0;
+  --awesome-wrap-background: none;
+  --awesome-wrap-padding: 0;
 
   /**
-   * @prop --outer-xs: The outer view breakpoint of xs. (Default: 0)
-   * @prop --outer-sm: The outer view breakpoint of sm. (Default: 576)
-   * @prop --outer-md: The outer view breakpoint of md. (Default: 768)
-   * @prop --outer-lg: The outer view breakpoint of lg. (Default: 992)
-   * @prop --outer-xl: The outer view breakpoint of xl. (Default: 1200)
-   * @prop --outer-xxl: The outer view breakpoint of xxl. (Default: 1400)
+   * @prop --awesome-outer-xs: The outer view breakpoint of xs. (Default: 0)
+   * @prop --awesome-outer-sm: The outer view breakpoint of sm. (Default: 576)
+   * @prop --awesome-outer-md: The outer view breakpoint of md. (Default: 768)
+   * @prop --awesome-outer-lg: The outer view breakpoint of lg. (Default: 992)
+   * @prop --awesome-outer-xl: The outer view breakpoint of xl. (Default: 1200)
+   * @prop --awesome-outer-xxl: The outer view breakpoint of xxl. (Default: 1400)
    */
-  --outer-xs: 0;
-  --outer-sm: 576;
-  --outer-md: 768;
-  --outer-lg: 992;
-  --outer-xl: 1200;
-  --outer-xxl: 1400;
+  --awesome-outer-xs: 0;
+  --awesome-outer-sm: 576;
+  --awesome-outer-md: 768;
+  --awesome-outer-lg: 992;
+  --awesome-outer-xl: 1200;
+  --awesome-outer-xxl: 1400;
 
   display: block;
 }
@@ -30,6 +30,6 @@
 #main-container {
   max-width: var(--content-max-width);
   margin: auto;
-  background: var(--container-background);
-  padding: var(--container-padding);
+  background: var(--awesome-wrap-background);
+  padding: var(--awesome-wrap-padding);
 }

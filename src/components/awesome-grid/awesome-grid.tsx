@@ -17,7 +17,7 @@ export class AwesomeGrid implements ComponentInterface {
 
   @Watch('rows')
   rowsChanged(rows: string) {
-    updateCSSVariable('--grid-template-rows', rows, this.hostElement);
+    updateCSSVariable('--awesome-grid-template-rows', rows, this.hostElement);
   }
 
   /**
@@ -28,7 +28,7 @@ export class AwesomeGrid implements ComponentInterface {
 
   @Watch('columns')
   columnsChanged(columns: string) {
-    updateCSSVariable('--grid-template-columns', columns, this.hostElement);
+    updateCSSVariable('--awesome-grid-template-columns', columns, this.hostElement);
   }
 
   /**
@@ -38,7 +38,7 @@ export class AwesomeGrid implements ComponentInterface {
 
   @Watch('rowGap')
   rowGapChanged(rowGap: string) {
-    updateCSSVariable('--grid-row-gap', rowGap, this.hostElement);
+    updateCSSVariable('--awesome-grid-row-gap', rowGap, this.hostElement);
   }
 
   /**
@@ -48,7 +48,7 @@ export class AwesomeGrid implements ComponentInterface {
 
   @Watch('columnGap')
   columnGapChanged(columnGap: string) {
-    updateCSSVariable('--grid-column-gap', columnGap, this.hostElement);
+    updateCSSVariable('--awesome-grid-column-gap', columnGap, this.hostElement);
   }
 
   componentDidLoad() {

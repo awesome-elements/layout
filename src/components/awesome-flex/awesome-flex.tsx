@@ -18,7 +18,7 @@ export class AwesomeFlex implements ComponentInterface {
 
   @Watch('baseFraction')
   baseFractionChanged(value: number) {
-    updateCSSVariable('--base-fraction', value.toString(), this.hostElement);
+    updateCSSVariable('--awesome-flex-base-fraction', value.toString(), this.hostElement);
   }
 
   componentWillLoad() {

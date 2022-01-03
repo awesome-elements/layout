@@ -16,7 +16,7 @@ export class AwesomeGridItem implements ComponentInterface {
 
   @Watch('column')
   columnChanged(column: number) {
-    updateCSSVariable('--grid-column', column?.toString(), this.hostElement);
+    updateCSSVariable('--awesome-grid-column', column?.toString(), this.hostElement);
   }
 
   /**
@@ -26,7 +26,7 @@ export class AwesomeGridItem implements ComponentInterface {
 
   @Watch('columnSpan')
   columnSpanChanged(columnSpan: number) {
-    updateCSSVariable('--grid-column-span', columnSpan?.toString(), this.hostElement);
+    updateCSSVariable('--awesome-grid-column-span', columnSpan?.toString(), this.hostElement);
   }
 
   /**
@@ -36,7 +36,7 @@ export class AwesomeGridItem implements ComponentInterface {
 
   @Watch('row')
   rowChanged(row: number) {
-    updateCSSVariable('--grid-row', row?.toString(), this.hostElement);
+    updateCSSVariable('--awesome-grid-row', row?.toString(), this.hostElement);
   }
 
   /**
@@ -46,7 +46,7 @@ export class AwesomeGridItem implements ComponentInterface {
 
   @Watch('rowSpan')
   rowSpanChanged(rowSpan: number) {
-    updateCSSVariable('--grid-row-span', rowSpan?.toString(), this.hostElement);
+    updateCSSVariable('--awesome-grid-row-span', rowSpan?.toString(), this.hostElement);
   }
 
   componentDidLoad() {

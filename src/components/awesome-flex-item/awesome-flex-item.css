@@ -2,6 +2,6 @@
 
 :host {
   display: flex;
-  max-width: var(--max-width);
+  max-width: var(--awesome-flex-item-max-width);
   flex: var(--flex);
 }
