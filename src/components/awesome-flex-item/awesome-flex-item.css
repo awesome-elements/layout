@@ -3,5 +3,5 @@
 :host {
   display: flex;
   max-width: var(--awesome-flex-item-max-width);
-  flex: var(--flex);
+  flex: var(--awesome-flex-item-flex);
 }

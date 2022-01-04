@@ -117,21 +117,21 @@ export class AwesomeFlexItem implements ComponentInterface {
   }
 
   private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
   }
 
   private updateFlexCSSVariable(value: string | number) {
     updateCSSVariable('--awesome-flex-item-max-width', 'calc(var(--awesome-flex-fraction) / var(--awesome-flex-base-fraction) * 100%)', this.hostElement);
     switch (true) {
       case value !== '' && !Number.isNaN(+value):
-        updateCSSVariable('--flex', '0 0 var(--awesome-flex-item-max-width)', this.hostElement);
+        updateCSSVariable('--awesome-flex-item-flex', '0 0 var(--awesome-flex-item-max-width)', this.hostElement);
         break;
       case value === 'auto':
-        updateCSSVariable('--flex', '0 0 auto', this.hostElement);
+        updateCSSVariable('--awesome-flex-item-flex', '0 0 auto', this.hostElement);
         break;
       case value === '':
       default:
-        updateCSSVariable('--flex', '1 1 auto', this.hostElement);
+        updateCSSVariable('--awesome-flex-item-flex', '1 1 auto', this.hostElement);
         break;
     }
   }
