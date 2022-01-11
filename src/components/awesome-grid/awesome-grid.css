@@ -1,6 +1,11 @@
 @import '../../utils/border-box-sizing.css';
 
 :host {
+  --awesome-grid-template-rows: '';
+  --awesome-grid-template-columns: '';
+  --awesome-grid-row-gap: '';
+  --awesome-grid-column-gap: '';
+
   display: block;
 }
 
