@@ -52,6 +52,6 @@
     "webcomponent"
   ],
   "dependencies": {
-    "@awesome-elements/utils": "^0.1.2"
+    "@awesome-elements/utils": "^0.2.0"
   }
 }
