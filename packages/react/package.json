@@ -1,7 +1,7 @@
 {
   "name": "@awesome-elements/layout-react",
   "sideEffects": false,
-  "version": "0.1.17",
+  "version": "0.2.0",
   "description": "React specific wrapper for @awesome-elements/layout",
   "homepage": "https://awesome-elements.github.io/layout/",
   "repository": {
@@ -35,7 +35,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@awesome-elements/layout": "0.1.17"
+    "@awesome-elements/layout": "0.2.0"
   },
   "peerDependencies": {
     "react": ">=16.7.0",
