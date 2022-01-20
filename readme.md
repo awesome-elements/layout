@@ -24,6 +24,7 @@ npm i @awesome-elements/layout
 - [Flex](./src/components/awesome-flex/readme.md)
 - [Grid](./src/components/awesome-grid/readme.md)
 - [Ratio Box](./src/components/awesome-ratio-box/readme.md)
+- [View Break](./src/components/awesome-view-break/readme.md)
 - [Wrap](./src/components/awesome-wrap/readme.md)
 
 ## Importing

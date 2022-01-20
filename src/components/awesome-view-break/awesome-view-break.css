@@ -1,0 +1,12 @@
+@import '../../utils/border-box-sizing.css';
+@import '../../utils/view-breakpoints.css';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+#main-container {
+  height: 100%;
+  width: 100%;
+}
