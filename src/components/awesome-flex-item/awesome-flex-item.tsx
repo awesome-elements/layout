@@ -17,23 +17,23 @@ export class AwesomeFlexItem implements ComponentInterface {
   }
 
   private get actualSm() {
-    return this.sm || this.actualXs;
+    return this.sm ?? this.actualXs;
   }
 
   private get actualMd() {
-    return this.md || this.actualSm;
+    return this.md ?? this.actualSm;
   }
 
   private get actualLg() {
-    return this.lg || this.actualMd;
+    return this.lg ?? this.actualMd;
   }
 
   private get actualXl() {
-    return this.xl || this.actualLg;
+    return this.xl ?? this.actualLg;
   }
 
   private get actualXxl() {
-    return this.xxl || this.actualXl;
+    return this.xxl ?? this.actualXl;
   }
 
   @Element() hostElement: HTMLAwesomeFlexItemElement;
@@ -41,42 +41,42 @@ export class AwesomeFlexItem implements ComponentInterface {
   /**
    * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) xs: number | 'auto' | '';
 
   /**
    * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) sm: number | 'auto' | '';
 
   /**
    * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) md: number | 'auto' | '';
 
   /**
    * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) lg: number | 'auto' | '';
 
   /**
    * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) xl: number | 'auto' | '';
 
   /**
    * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
    */
   @Prop({ reflect: true }) xxl: number | 'auto' | '';
 
