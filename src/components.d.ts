@@ -85,6 +85,8 @@ export namespace Components {
          */
         "widthFactor": number;
     }
+    interface AwesomeViewBreak {
+    }
     interface AwesomeWrap {
     }
 }
@@ -119,6 +121,12 @@ declare global {
         prototype: HTMLAwesomeRatioBoxElement;
         new (): HTMLAwesomeRatioBoxElement;
     };
+    interface HTMLAwesomeViewBreakElement extends Components.AwesomeViewBreak, HTMLStencilElement {
+    }
+    var HTMLAwesomeViewBreakElement: {
+        prototype: HTMLAwesomeViewBreakElement;
+        new (): HTMLAwesomeViewBreakElement;
+    };
     interface HTMLAwesomeWrapElement extends Components.AwesomeWrap, HTMLStencilElement {
     }
     var HTMLAwesomeWrapElement: {
@@ -131,6 +139,7 @@ declare global {
         "awesome-grid": HTMLAwesomeGridElement;
         "awesome-grid-item": HTMLAwesomeGridItemElement;
         "awesome-ratio-box": HTMLAwesomeRatioBoxElement;
+        "awesome-view-break": HTMLAwesomeViewBreakElement;
         "awesome-wrap": HTMLAwesomeWrapElement;
     }
 }
@@ -213,6 +222,8 @@ declare namespace LocalJSX {
          */
         "widthFactor"?: number;
     }
+    interface AwesomeViewBreak {
+    }
     interface AwesomeWrap {
     }
     interface IntrinsicElements {
@@ -221,6 +232,7 @@ declare namespace LocalJSX {
         "awesome-grid": AwesomeGrid;
         "awesome-grid-item": AwesomeGridItem;
         "awesome-ratio-box": AwesomeRatioBox;
+        "awesome-view-break": AwesomeViewBreak;
         "awesome-wrap": AwesomeWrap;
     }
 }
@@ -233,6 +245,7 @@ declare module "@stencil/core" {
             "awesome-grid": LocalJSX.AwesomeGrid & JSXBase.HTMLAttributes<HTMLAwesomeGridElement>;
             "awesome-grid-item": LocalJSX.AwesomeGridItem & JSXBase.HTMLAttributes<HTMLAwesomeGridItemElement>;
             "awesome-ratio-box": LocalJSX.AwesomeRatioBox & JSXBase.HTMLAttributes<HTMLAwesomeRatioBoxElement>;
+            "awesome-view-break": LocalJSX.AwesomeViewBreak & JSXBase.HTMLAttributes<HTMLAwesomeViewBreakElement>;
             "awesome-wrap": LocalJSX.AwesomeWrap & JSXBase.HTMLAttributes<HTMLAwesomeWrapElement>;
         }
     }
