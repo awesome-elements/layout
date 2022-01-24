@@ -15,27 +15,27 @@ export namespace Components {
     interface AwesomeFlexItem {
         "containerSizeChanged": (size: number) => Promise<void>;
         /**
-          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "lg": number | 'auto' | '';
         /**
-          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "md": number | 'auto' | '';
         /**
-          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "sm": number | 'auto' | '';
         /**
-          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xl": number | 'auto' | '';
         /**
-          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xs": number | 'auto' | '';
         /**
-          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xxl": number | 'auto' | '';
     }
@@ -152,27 +152,27 @@ declare namespace LocalJSX {
     }
     interface AwesomeFlexItem {
         /**
-          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "lg"?: number | 'auto' | '';
         /**
-          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "md"?: number | 'auto' | '';
         /**
-          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "sm"?: number | 'auto' | '';
         /**
-          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xl"?: number | 'auto' | '';
         /**
-          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xs"?: number | 'auto' | '';
         /**
-          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex item without setting the size will share the remaining space equally.
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
          */
         "xxl"?: number | 'auto' | '';
     }

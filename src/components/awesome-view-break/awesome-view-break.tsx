@@ -1,4 +1,4 @@
-import { observeMutation, observeResize } from '@awesome-elements/utils';
+import { observeMutation, observeResize, unobserveMutation, unobserveResize } from '@awesome-elements/utils';
 import { Component, Host, h, ComponentInterface, Element, State } from '@stencil/core';
 
 type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -30,10 +30,15 @@ export class AwesomeViewBreak implements ComponentInterface {
   @State() breakpoint: Breakpoint;
   @State() availableBreakpoints: Breakpoint[];
 
-  componentWillLoad() {
-    observeResize.call(this, this.hostElement, [this.handleResizing]);
-    observeMutation.call(this, this.hostElement, [this.handleMutation], { childList: true, attributes: true, subtree: true } as MutationObserverInit);
+  connectedCallback() {
+    observeResize(this.hostElement, [this.handleResizing]);
+    observeMutation(this.hostElement, [this.handleMutation], { childList: true, attributes: true, subtree: true });
     this.handleMutation();
+  }
+
+  disconnectedCallback() {
+    unobserveResize(this.hostElement);
+    unobserveMutation(this.hostElement);
   }
 
   render() {
@@ -44,17 +49,24 @@ export class AwesomeViewBreak implements ComponentInterface {
     );
   }
 
-  private handleMutation(record?: MutationRecord) {
+  // TODO consider to make it a util
+  private getViewBreakpoint(name: string) {
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
+  }
+
+  private handleMutation = (record?: MutationRecord) => {
     if (
       record === undefined ||
       record.type === 'childList' ||
       (record.type === 'attributes' && record.target.parentElement === this.hostElement && record.attributeName === 'slot')
     ) {
-      this.availableBreakpoints = Array.from(this.hostElement.querySelectorAll('*')).map(element => element.getAttribute('slot') as Breakpoint).filter(Boolean);
+      this.availableBreakpoints = Array.from(this.hostElement.querySelectorAll('*'))
+        .map(element => element.getAttribute('slot') as Breakpoint)
+        .filter(Boolean);
     }
-  }
+  };
 
-  private handleResizing(entry: ResizeObserverEntry) {
+  private handleResizing = (entry: ResizeObserverEntry) => {
     const width = entry.contentRect.width;
     switch (true) {
       case width >= this.getViewBreakpoint('xxl'):
@@ -75,10 +87,5 @@ export class AwesomeViewBreak implements ComponentInterface {
       default:
         this.breakpoint = 'xs';
     }
-  }
-
-  // TODO consider to make it a util
-  private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
-  }
+  };
 }

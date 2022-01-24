@@ -1,5 +1,5 @@
 import { Component, Host, h, Element, ComponentInterface } from '@stencil/core';
-import { updateCSSVariable, observeResize } from '@awesome-elements/utils';
+import { updateCSSVariable, observeResize, unobserveResize } from '@awesome-elements/utils';
 
 @Component({
   tag: 'awesome-wrap',
@@ -9,8 +9,12 @@ import { updateCSSVariable, observeResize } from '@awesome-elements/utils';
 export class AwesomeWrap implements ComponentInterface {
   @Element() hostElement: HTMLAwesomeWrapElement;
 
-  componentWillLoad() {
-    observeResize.call(this, this.hostElement, [this.updateContentMaxWidthForViewBreakpoint]);
+  connectedCallback() {
+    observeResize(this.hostElement, [this.updateContentMaxWidthForViewBreakpoint]);
+  }
+
+  disconnectedCallback() {
+    unobserveResize(this.hostElement);
   }
 
   render() {
@@ -23,7 +27,15 @@ export class AwesomeWrap implements ComponentInterface {
     );
   }
 
-  private updateContentMaxWidthForViewBreakpoint(entry: ResizeObserverEntry) {
+  private getOuterBreakpoint(name: string) {
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-outer-${name}`);
+  }
+
+  private getViewBreakpoint(name: string) {
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
+  }
+
+  private updateContentMaxWidthForViewBreakpoint = (entry: ResizeObserverEntry) => {
     const width = entry.contentRect.width;
     switch (true) {
       case width >= this.getOuterBreakpoint('xxl'):
@@ -44,13 +56,5 @@ export class AwesomeWrap implements ComponentInterface {
       default:
         updateCSSVariable('--content-max-width', `100%`, this.hostElement);
     }
-  }
-
-  private getOuterBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-outer-${name}`);
-  }
-
-  private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
-  }
+  };
 }

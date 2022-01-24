@@ -1,5 +1,5 @@
 import { Component, Host, h, ComponentInterface, Element, Prop, Watch } from '@stencil/core';
-import { updateCSSVariable, observeResize } from '@awesome-elements/utils';
+import { updateCSSVariable, observeResize, unobserveResize } from '@awesome-elements/utils';
 
 @Component({
   tag: 'awesome-flex',
@@ -21,9 +21,16 @@ export class AwesomeFlex implements ComponentInterface {
     updateCSSVariable('--awesome-flex-base-fraction', value.toString(), this.hostElement);
   }
 
+  connectedCallback() {
+    observeResize(this.hostElement, [this.notifySizeChangeToItemElements]);
+  }
+
+  disconnectedCallback() {
+    unobserveResize(this.hostElement);
+  }
+
   componentWillLoad() {
     this.baseFractionChanged(this.baseFraction);
-    observeResize.call(this, this.hostElement, [this.notifySizeChangeToItemElements]);
   }
 
   render() {
@@ -34,8 +41,8 @@ export class AwesomeFlex implements ComponentInterface {
     );
   }
 
-  private notifySizeChangeToItemElements(entry: ResizeObserverEntry) {
+  private notifySizeChangeToItemElements = (entry: ResizeObserverEntry) => {
     const width = entry.contentRect.width;
     this.hostElement.querySelectorAll(this.FLEX_ITEM_TAG_NAME).forEach(itemElement => itemElement.containerSizeChanged(width));
-  }
+  };
 }
