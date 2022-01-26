@@ -7,7 +7,7 @@ import { updateCSSVariable } from '@awesome-elements/utils';
   shadow: true,
 })
 export class AwesomeFlexItem implements ComponentInterface {
-  private set fraction(value: number | 'auto' | '') {
+  private set fraction(value: number | 'auto' | string) {
     updateCSSVariable('--awesome-flex-fraction', value?.toString(), this.hostElement);
     this.updateFlexCSSVariable(value);
   }
@@ -41,44 +41,50 @@ export class AwesomeFlexItem implements ComponentInterface {
   /**
    * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If nothing or `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xs: number | 'auto' | '';
+  @Prop({ reflect: true }) xs: number | 'auto' | string;
 
   /**
    * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) sm: number | 'auto' | '';
+  @Prop({ reflect: true }) sm: number | 'auto' | string;
 
   /**
    * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) md: number | 'auto' | '';
+  @Prop({ reflect: true }) md: number | 'auto' | string;
 
   /**
    * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) lg: number | 'auto' | '';
+  @Prop({ reflect: true }) lg: number | 'auto' | string;
 
   /**
    * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xl: number | 'auto' | '';
+  @Prop({ reflect: true }) xl: number | 'auto' | string;
 
   /**
    * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available.
    * If `"auto"` is passed, it will be the size of its content.
-   * If `""` is passed, all flex items without setting the size will share the remaining space equally.
+   * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
+   * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xxl: number | 'auto' | '';
+  @Prop({ reflect: true }) xxl: number | 'auto' | string;
 
   /** @internal */
   @Method()
@@ -124,13 +130,20 @@ export class AwesomeFlexItem implements ComponentInterface {
     updateCSSVariable('--awesome-flex-item-max-width', 'calc(var(--awesome-flex-fraction) / var(--awesome-flex-base-fraction) * 100%)', this.hostElement);
     switch (true) {
       case value !== '' && !Number.isNaN(+value):
+        this.hostElement.style.width = '0';
         updateCSSVariable('--awesome-flex-item-flex', '0 0 var(--awesome-flex-item-max-width)', this.hostElement);
         break;
       case value === 'auto':
+        this.hostElement.style.width = 'auto';
         updateCSSVariable('--awesome-flex-item-flex', '0 0 auto', this.hostElement);
         break;
-      case value === '':
+      case value?.toString().match(/[0-9]+fr/)?.length > 0:
+        this.hostElement.style.width = '0';
+        const numericalValue = +value.toString().match(/[0-9]+/)?.[0];
+        updateCSSVariable('--awesome-flex-item-flex', `${numericalValue} ${1 / numericalValue} auto`, this.hostElement);
+        break;
       default:
+        this.hostElement.style.width = '0';
         updateCSSVariable('--awesome-flex-item-flex', '1 1 auto', this.hostElement);
         break;
     }

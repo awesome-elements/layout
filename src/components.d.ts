@@ -15,29 +15,29 @@ export namespace Components {
     interface AwesomeFlexItem {
         "containerSizeChanged": (size: number) => Promise<void>;
         /**
-          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "lg": number | 'auto' | '';
+        "lg": number | 'auto' | string;
         /**
-          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "md": number | 'auto' | '';
+        "md": number | 'auto' | string;
         /**
-          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "sm": number | 'auto' | '';
+        "sm": number | 'auto' | string;
         /**
-          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xl": number | 'auto' | '';
+        "xl": number | 'auto' | string;
         /**
-          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If nothing or `""` is passed, it works same as `1fr`.
          */
-        "xs": number | 'auto' | '';
+        "xs": number | 'auto' | string;
         /**
-          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xxl": number | 'auto' | '';
+        "xxl": number | 'auto' | string;
     }
     interface AwesomeGrid {
         /**
@@ -152,29 +152,29 @@ declare namespace LocalJSX {
     }
     interface AwesomeFlexItem {
         /**
-          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "lg"?: number | 'auto' | '';
+        "lg"?: number | 'auto' | string;
         /**
-          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "md"?: number | 'auto' | '';
+        "md"?: number | 'auto' | string;
         /**
-          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "sm"?: number | 'auto' | '';
+        "sm"?: number | 'auto' | string;
         /**
-          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xl"?: number | 'auto' | '';
+        "xl"?: number | 'auto' | string;
         /**
-          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If nothing or `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If nothing or `""` is passed, it works same as `1fr`.
          */
-        "xs"?: number | 'auto' | '';
+        "xs"?: number | 'auto' | string;
         /**
-          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `""` is passed, all flex items without setting the size will share the remaining space equally.
+          * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xxl"?: number | 'auto' | '';
+        "xxl"?: number | 'auto' | string;
     }
     interface AwesomeGrid {
         /**
