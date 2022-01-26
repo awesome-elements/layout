@@ -1,13 +1,15 @@
 import { Component, Host, h, ComponentInterface, Element, Method, Prop } from '@stencil/core';
 import { updateCSSVariable } from '@awesome-elements/utils';
 
+export type BreakpointValue = number | string;
+
 @Component({
   tag: 'awesome-flex-item',
   styleUrl: 'awesome-flex-item.css',
   shadow: true,
 })
 export class AwesomeFlexItem implements ComponentInterface {
-  private set fraction(value: number | 'auto' | string) {
+  private set fraction(value: BreakpointValue) {
     updateCSSVariable('--awesome-flex-fraction', value?.toString(), this.hostElement);
     this.updateFlexCSSVariable(value);
   }
@@ -44,7 +46,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If nothing or `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xs: number | 'auto' | string;
+  @Prop({ reflect: true }) xs: BreakpointValue;
 
   /**
    * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available.
@@ -52,7 +54,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) sm: number | 'auto' | string;
+  @Prop({ reflect: true }) sm: BreakpointValue;
 
   /**
    * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available.
@@ -60,7 +62,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) md: number | 'auto' | string;
+  @Prop({ reflect: true }) md: BreakpointValue;
 
   /**
    * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available.
@@ -68,7 +70,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) lg: number | 'auto' | string;
+  @Prop({ reflect: true }) lg: BreakpointValue;
 
   /**
    * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available.
@@ -76,7 +78,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xl: number | 'auto' | string;
+  @Prop({ reflect: true }) xl: BreakpointValue;
 
   /**
    * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available.
@@ -84,7 +86,7 @@ export class AwesomeFlexItem implements ComponentInterface {
    * If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor.
    * If `""` is passed, it works same as `1fr`.
    */
-  @Prop({ reflect: true }) xxl: number | 'auto' | string;
+  @Prop({ reflect: true }) xxl: BreakpointValue;
 
   /** @internal */
   @Method()

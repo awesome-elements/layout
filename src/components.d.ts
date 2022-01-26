@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { BreakpointValue } from "./components/awesome-flex-item/awesome-flex-item";
 export namespace Components {
     interface AwesomeFlex {
         /**
@@ -17,27 +18,27 @@ export namespace Components {
         /**
           * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "lg": number | 'auto' | string;
+        "lg": BreakpointValue;
         /**
           * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "md": number | 'auto' | string;
+        "md": BreakpointValue;
         /**
           * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "sm": number | 'auto' | string;
+        "sm": BreakpointValue;
         /**
           * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xl": number | 'auto' | string;
+        "xl": BreakpointValue;
         /**
           * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If nothing or `""` is passed, it works same as `1fr`.
          */
-        "xs": number | 'auto' | string;
+        "xs": BreakpointValue;
         /**
           * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xxl": number | 'auto' | string;
+        "xxl": BreakpointValue;
     }
     interface AwesomeGrid {
         /**
@@ -154,27 +155,27 @@ declare namespace LocalJSX {
         /**
           * The size of the flex item for lg screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "lg"?: number | 'auto' | string;
+        "lg"?: BreakpointValue;
         /**
           * The size of the flex item for md screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "md"?: number | 'auto' | string;
+        "md"?: BreakpointValue;
         /**
           * The size of the flex item for sm screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "sm"?: number | 'auto' | string;
+        "sm"?: BreakpointValue;
         /**
           * The size of the flex item for xl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xl"?: number | 'auto' | string;
+        "xl"?: BreakpointValue;
         /**
           * The size of the flex item for xs screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If nothing or `""` is passed, it works same as `1fr`.
          */
-        "xs"?: number | 'auto' | string;
+        "xs"?: BreakpointValue;
         /**
           * The size of the flex item for xxl screens, in terms of how many portions it should take up out of the total available. If `"auto"` is passed, it will be the size of its content. If `<number>fr` is passed, it shares remaining space evenly accroding to the `<number>` factor. If `""` is passed, it works same as `1fr`.
          */
-        "xxl"?: number | 'auto' | string;
+        "xxl"?: BreakpointValue;
     }
     interface AwesomeGrid {
         /**
