@@ -3,34 +3,34 @@
 
 :host {
   /**
-   * @prop --awesome-wrap-outer-breakpoint-xs: The outer breakpoint of xs. (Default: 0)
-   * @prop --awesome-wrap-outer-breakpoint-sm: The outer breakpoint of sm. (Default: 576)
-   * @prop --awesome-wrap-outer-breakpoint-md: The outer breakpoint of md. (Default: 768)
-   * @prop --awesome-wrap-outer-breakpoint-lg: The outer breakpoint of lg. (Default: 992)
-   * @prop --awesome-wrap-outer-breakpoint-xl: The outer breakpoint of xl. (Default: 1200)
-   * @prop --awesome-wrap-outer-breakpoint-xxl: The outer breakpoint of xxl. (Default: 1400)
+   * @prop --awesome-wrap-outer-breakpoint-xs-in-px: The outer breakpoint of xs. (Default: 0)
+   * @prop --awesome-wrap-outer-breakpoint-sm-in-px: The outer breakpoint of sm. (Default: 576)
+   * @prop --awesome-wrap-outer-breakpoint-md-in-px: The outer breakpoint of md. (Default: 768)
+   * @prop --awesome-wrap-outer-breakpoint-lg-in-px: The outer breakpoint of lg. (Default: 992)
+   * @prop --awesome-wrap-outer-breakpoint-xl-in-px: The outer breakpoint of xl. (Default: 1200)
+   * @prop --awesome-wrap-outer-breakpoint-xxl-in-px: The outer breakpoint of xxl. (Default: 1400)
    */
-  --awesome-wrap-outer-breakpoint-xs: 0;
-  --awesome-wrap-outer-breakpoint-sm: 576;
-  --awesome-wrap-outer-breakpoint-md: 768;
-  --awesome-wrap-outer-breakpoint-lg: 992;
-  --awesome-wrap-outer-breakpoint-xl: 1200;
-  --awesome-wrap-outer-breakpoint-xxl: 1400;
+  --awesome-wrap-outer-breakpoint-xs-in-px: 0;
+  --awesome-wrap-outer-breakpoint-sm-in-px: 576;
+  --awesome-wrap-outer-breakpoint-md-in-px: 768;
+  --awesome-wrap-outer-breakpoint-lg-in-px: 992;
+  --awesome-wrap-outer-breakpoint-xl-in-px: 1200;
+  --awesome-wrap-outer-breakpoint-xxl-in-px: 1400;
 
   /**
-   * @prop --awesome-wrap-inner-breakpoint-xs: The inner breakpoint of xs. (Default to --awesome-view-breakpoint-xs)
-   * @prop --awesome-wrap-inner-breakpoint-sm: The inner breakpoint of sm. (Default to --awesome-view-breakpoint-sm)
-   * @prop --awesome-wrap-inner-breakpoint-md: The inner breakpoint of md. (Default to --awesome-view-breakpoint-md)
-   * @prop --awesome-wrap-inner-breakpoint-lg: The inner breakpoint of lg. (Default to --awesome-view-breakpoint-lg)
-   * @prop --awesome-wrap-inner-breakpoint-xl: The inner breakpoint of xl. (Default to --awesome-view-breakpoint-xl)
-   * @prop --awesome-wrap-inner-breakpoint-xxl: The inner breakpoint of xxl. (Default to --awesome-view-breakpoint-xxl)
+   * @prop --awesome-wrap-inner-breakpoint-xs: The inner breakpoint of xs. (Default: 100%)
+   * @prop --awesome-wrap-inner-breakpoint-sm: The inner breakpoint of sm. (Default to the value of `--awesome-view-breakpoint-sm` with unit `px`)
+   * @prop --awesome-wrap-inner-breakpoint-md: The inner breakpoint of md. (Default to the value of `--awesome-view-breakpoint-md` with unit `px`)
+   * @prop --awesome-wrap-inner-breakpoint-lg: The inner breakpoint of lg. (Default to the value of `--awesome-view-breakpoint-lg` with unit `px`)
+   * @prop --awesome-wrap-inner-breakpoint-xl: The inner breakpoint of xl. (Default to the value of `--awesome-view-breakpoint-xl` with unit `px`)
+   * @prop --awesome-wrap-inner-breakpoint-xxl: The inner breakpoint of xxl. (Default to the value of `--awesome-view-breakpoint-xxl` with unit `px`)
    */
-   --awesome-wrap-inner-breakpoint-xs: var(--awesome-view-breakpoint-xs);
-   --awesome-wrap-inner-breakpoint-sm: var(--awesome-view-breakpoint-sm);
-   --awesome-wrap-inner-breakpoint-md: var(--awesome-view-breakpoint-md);
-   --awesome-wrap-inner-breakpoint-lg: var(--awesome-view-breakpoint-lg);
-   --awesome-wrap-inner-breakpoint-xl: var(--awesome-view-breakpoint-xl);
-   --awesome-wrap-inner-breakpoint-xxl: var(--awesome-view-breakpoint-xxl);
+   --awesome-wrap-inner-breakpoint-xs: 100%;
+   --awesome-wrap-inner-breakpoint-sm: calc(var(--awesome-view-breakpoint-sm) * 1px);
+   --awesome-wrap-inner-breakpoint-md: calc(var(--awesome-view-breakpoint-md) * 1px);
+   --awesome-wrap-inner-breakpoint-lg: calc(var(--awesome-view-breakpoint-lg) * 1px);
+   --awesome-wrap-inner-breakpoint-xl: calc(var(--awesome-view-breakpoint-xl) * 1px);
+   --awesome-wrap-inner-breakpoint-xxl: calc(var(--awesome-view-breakpoint-xxl) * 1px);
 
   display: block;
 }
