@@ -51,7 +51,7 @@ export class AwesomeViewBreak implements ComponentInterface {
 
   // TODO consider to make it a util
   private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-view-breakpoint-${name}`);
   }
 
   private handleMutation = (record?: MutationRecord) => {

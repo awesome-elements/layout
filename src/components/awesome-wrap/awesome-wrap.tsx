@@ -31,30 +31,30 @@ export class AwesomeWrap implements ComponentInterface {
   }
 
   private getOuterBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-outer-${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-wrap-outer-breakpoint-${name}`);
   }
 
-  private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
+  private getInnerBreakpoint(name: string) {
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-wrap-inner-breakpoint-${name}`);
   }
 
   private updateContentMaxWidthForViewBreakpoint = (entry: ResizeObserverEntry) => {
     const width = entry.contentRect.width;
     switch (true) {
       case width >= this.getOuterBreakpoint('xxl'):
-        updateCSSVariable('--content-max-width', `${this.getViewBreakpoint('xxl')}px`, this.hostElement);
+        updateCSSVariable('--content-max-width', `${this.getInnerBreakpoint('xxl')}px`, this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('xl'):
-        updateCSSVariable('--content-max-width', `${this.getViewBreakpoint('xl')}px`, this.hostElement);
+        updateCSSVariable('--content-max-width', `${this.getInnerBreakpoint('xl')}px`, this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('lg'):
-        updateCSSVariable('--content-max-width', `${this.getViewBreakpoint('lg')}px`, this.hostElement);
+        updateCSSVariable('--content-max-width', `${this.getInnerBreakpoint('lg')}px`, this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('md'):
-        updateCSSVariable('--content-max-width', `${this.getViewBreakpoint('md')}px`, this.hostElement);
+        updateCSSVariable('--content-max-width', `${this.getInnerBreakpoint('md')}px`, this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('sm'):
-        updateCSSVariable('--content-max-width', `${this.getViewBreakpoint('sm')}px`, this.hostElement);
+        updateCSSVariable('--content-max-width', `${this.getInnerBreakpoint('sm')}px`, this.hostElement);
         break;
       default:
         updateCSSVariable('--content-max-width', `100%`, this.hostElement);

@@ -125,7 +125,7 @@ export class AwesomeFlexItem implements ComponentInterface {
   }
 
   private getViewBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-${name}`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-view-breakpoint-${name}`);
   }
 
   private updateFlexCSSVariable(value: string | number) {
