@@ -1,6 +1,9 @@
 import { Component, Host, h, Element, ComponentInterface } from '@stencil/core';
 import { updateCSSVariable, observeResize, unobserveResize } from '@awesome-elements/utils';
 
+/**
+ * @part inner - The inner container element that wraps all child elements.
+ */
 @Component({
   tag: 'awesome-wrap',
   styleUrl: 'awesome-wrap.css',
@@ -20,7 +23,7 @@ export class AwesomeWrap implements ComponentInterface {
   render() {
     return (
       <Host>
-        <div id="main-container">
+        <div part="inner">
           <slot></slot>
         </div>
       </Host>

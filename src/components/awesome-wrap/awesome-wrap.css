@@ -3,13 +3,6 @@
 
 :host {
   /**
-   * @prop --awesome-wrap-background: Background of the inner container
-   * @prop --awesome-wrap-padding: Padding of the inner container
-   */
-  --awesome-wrap-background: none;
-  --awesome-wrap-padding: 0;
-
-  /**
    * @prop --awesome-outer-xs: The outer view breakpoint of xs. (Default: 0)
    * @prop --awesome-outer-sm: The outer view breakpoint of sm. (Default: 576)
    * @prop --awesome-outer-md: The outer view breakpoint of md. (Default: 768)
@@ -27,9 +20,7 @@
   display: block;
 }
 
-#main-container {
+[part='inner'] {
   max-width: var(--content-max-width);
   margin: auto;
-  background: var(--awesome-wrap-background);
-  padding: var(--awesome-wrap-padding);
 }
