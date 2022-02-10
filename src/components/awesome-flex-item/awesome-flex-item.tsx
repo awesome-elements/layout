@@ -1,7 +1,7 @@
 import { Component, Host, h, ComponentInterface, Element, Method, Prop } from '@stencil/core';
 import { updateCSSVariable } from '@awesome-elements/utils';
 
-export type BreakpointValue = number | string;
+export type BreakpointValue =  number | 'auto' | `${number}fr`;
 
 @Component({
   tag: 'awesome-flex-item',
