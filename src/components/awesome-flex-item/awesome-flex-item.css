@@ -4,3 +4,7 @@
   display: flex;
   flex: var(--awesome-flex-item-flex);
 }
+
+::slotted(*) {
+  flex: content;
+}
