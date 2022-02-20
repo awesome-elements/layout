@@ -132,20 +132,16 @@ export class AwesomeFlexItem implements ComponentInterface {
     updateCSSVariable('--awesome-flex-item-max-width', 'calc(var(--awesome-flex-fraction) / var(--awesome-flex-base-fraction) * 100%)', this.hostElement);
     switch (true) {
       case value !== '' && !Number.isNaN(+value):
-        this.hostElement.style.width = '0';
         updateCSSVariable('--awesome-flex-item-flex', '0 0 var(--awesome-flex-item-max-width)', this.hostElement);
         break;
       case value === 'auto':
-        this.hostElement.style.width = 'auto';
         updateCSSVariable('--awesome-flex-item-flex', '0 0 auto', this.hostElement);
         break;
       case value?.toString().match(/[0-9]+fr/)?.length > 0:
-        this.hostElement.style.width = '0';
         const numericalValue = +value.toString().match(/[0-9]+/)?.[0];
         updateCSSVariable('--awesome-flex-item-flex', `${numericalValue} ${1 / numericalValue} auto`, this.hostElement);
         break;
       default:
-        this.hostElement.style.width = '0';
         updateCSSVariable('--awesome-flex-item-flex', '1 1 auto', this.hostElement);
         break;
     }
