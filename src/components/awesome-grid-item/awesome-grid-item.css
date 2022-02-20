@@ -1,7 +1,7 @@
 @import '../../utils/border-box-sizing.css';
 
 :host {
-  --awesome-grid-column: '';
+  --awesome-grid-row: '';
   --awesome-grid-row-span: '';
   --awesome-grid-column: '';
   --awesome-grid-column-span: '';
