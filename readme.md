@@ -56,11 +56,93 @@ Note that `type="module"` is an ES6 syntax and only works in modern browsers.
 You can check [here](https://stenciljs.com/docs/javascript) for more details for Vanilla JS importing.
 
 ### Angular
-Please check [here](https://stenciljs.com/docs/angular) for details. Just make sure you import `defineCustomElements()` from _node_modules/@awesome-elements/layout/loader_ instead.
+First, [install using NPM](#from-npm).  
+Then include ```CUSTOM_ELEMENTS_SCHEMA``` in any module that uses the components. For example, in ```AppModule```
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule],
+  bootstrap: [AppComponent],
+  // add this
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class AppModule {}
+```
+After that, in ```main.ts```
+```ts
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+// add this
+import { applyPolyfills, defineCustomElements } from '@awesome-elements/layout/loader';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
+
+// add this, the applyPolyfills() is optional
+applyPolyfills().then(() => {
+  defineCustomElements()
+});
+```
 
 ### React
-We suggest to use our React wrapper package [@awesome-elements/layout-react](https://www.npmjs.com/package/@awesome-elements/layout-react).  
-However, if you still want to use the web component directly, please check [here](https://stenciljs.com/docs/react) for details. Just make sure you import `defineCustomElements()` from _node_modules/@awesome-elements/layout/loader_ instead.
+__We suggest to use our React wrapper package [@awesome-elements/layout-react](https://www.npmjs.com/package/@awesome-elements/layout-react).__  
+However, if you still want to use the web component directly, you can follow the below instruction:  
+First [install using NPM](#use-npm).  
+Then in ```index.js```
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+
+// add this
+import { applyPolyfills, defineCustomElements } from '@awesome-elements/layout/loader';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+
+// add this, the applyPolyfills() is optional
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+```
 
 ### Vue
-Please check [here](https://stenciljs.com/docs/vue) for details. Just make sure you import `defineCustomElements()` from _node_modules/@awesome-elements/layout/loader_ instead. In addition, when you ignore elements, you should ignore all elements starting with `awesome-`.
+First [install using NPM](#use-npm).
+Then in ```main.js```
+```js
+import Vue from 'vue';
+import App from './App.vue';
+
+import { applyPolyfills, defineCustomElements } from '@awesome-elements/layout/loader';
+
+Vue.config.productionTip = false;
+
+// add this
+Vue.config.ignoredElements = [/awesome-\w*/];
+
+// add this, the applyPolyfills() is optional
+applyPolyfills().then(() => {
+  defineCustomElements();
+});
+
+new Vue({
+  render: h => h(App)
+}).$mount('#app');
+```
+Note: This is an example for Vue 2.
