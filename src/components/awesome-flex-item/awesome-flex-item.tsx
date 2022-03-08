@@ -38,6 +38,8 @@ export class AwesomeFlexItem implements ComponentInterface {
     return this.xxl ?? this.actualXl;
   }
 
+  private containerSize = 0;
+
   @Element() hostElement: HTMLAwesomeFlexItemElement;
 
   /**
@@ -91,29 +93,16 @@ export class AwesomeFlexItem implements ComponentInterface {
   /** @internal */
   @Method()
   async containerSizeChanged(size: number) {
-    switch (true) {
-      case size >= this.getViewBreakpoint('xxl'):
-        this.fraction = this.actualXxl;
-        break;
-      case size >= this.getViewBreakpoint('xl'):
-        this.fraction = this.actualXl;
-        break;
-      case size >= this.getViewBreakpoint('lg'):
-        this.fraction = this.actualLg;
-        break;
-      case size >= this.getViewBreakpoint('md'):
-        this.fraction = this.actualMd;
-        break;
-      case size >= this.getViewBreakpoint('sm'):
-        this.fraction = this.actualSm;
-        break;
-      default:
-        this.fraction = this.actualXs;
-    }
+    this.containerSize = size;
+    this.updateFraction();
   }
 
   connectedCallback() {
     this.fraction = this.actualXs;
+  }
+
+  componentWillUpdate() {
+    this.updateFraction();
   }
 
   render() {
@@ -122,6 +111,28 @@ export class AwesomeFlexItem implements ComponentInterface {
         <slot></slot>
       </Host>
     );
+  }
+
+  private updateFraction() {
+    switch (true) {
+      case this.containerSize >= this.getViewBreakpoint('xxl'):
+        this.fraction = this.actualXxl;
+        break;
+      case this.containerSize >= this.getViewBreakpoint('xl'):
+        this.fraction = this.actualXl;
+        break;
+      case this.containerSize >= this.getViewBreakpoint('lg'):
+        this.fraction = this.actualLg;
+        break;
+      case this.containerSize >= this.getViewBreakpoint('md'):
+        this.fraction = this.actualMd;
+        break;
+      case this.containerSize >= this.getViewBreakpoint('sm'):
+        this.fraction = this.actualSm;
+        break;
+      default:
+        this.fraction = this.actualXs;
+    }
   }
 
   private getViewBreakpoint(name: string) {
