@@ -1,7 +1,7 @@
 import { Component, Host, h, ComponentInterface, Element, Method, Prop } from '@stencil/core';
 import { updateCSSVariable } from '@awesome-elements/utils';
 
-export type BreakpointValue =  number | 'auto' | `${number}fr`;
+export type BreakpointValue = number | 'auto' | `${number}fr`;
 
 @Component({
   tag: 'awesome-flex-item',
@@ -138,11 +138,9 @@ export class AwesomeFlexItem implements ComponentInterface {
         updateCSSVariable('--awesome-flex-item-flex', '0 0 auto', this.hostElement);
         break;
       case value?.toString().match(/[0-9]+fr/)?.length > 0:
-        const numericalValue = +value.toString().match(/[0-9]+/)?.[0];
-        updateCSSVariable('--awesome-flex-item-flex', `${numericalValue} ${1 / numericalValue} auto`, this.hostElement);
-        break;
       default:
-        updateCSSVariable('--awesome-flex-item-flex', '1 1 auto', this.hostElement);
+        const numericalValue = +value?.toString().match(/[0-9]+/)?.[0] || 1;
+        updateCSSVariable('--awesome-flex-item-flex', `${numericalValue} ${1 / numericalValue} 0`, this.hostElement);
         break;
     }
   }
