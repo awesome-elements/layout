@@ -31,29 +31,29 @@ export class AwesomeWrap implements ComponentInterface {
   }
 
   private getOuterBreakpoint(name: string) {
-    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-wrap-outer-breakpoint-${name}-in-px`);
+    return +getComputedStyle(this.hostElement).getPropertyValue(`--awesome-wrap-outer-breakpoint-${name}-in-px-local`);
   }
 
   private updateContentMaxWidthForViewBreakpoint = (entry: ResizeObserverEntry) => {
     const width = entry.contentRect.width;
     switch (true) {
       case width >= this.getOuterBreakpoint('xxl'):
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xxl)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xxl-local)', this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('xl'):
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xl)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xl-local)', this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('lg'):
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-lg)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-lg-local)', this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('md'):
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-md)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-md-local)', this.hostElement);
         break;
       case width >= this.getOuterBreakpoint('sm'):
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-sm)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-sm-local)', this.hostElement);
         break;
       default:
-        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xs)', this.hostElement);
+        updateCSSVariable('--content-max-width', 'var(--awesome-wrap-inner-breakpoint-xs-local)', this.hostElement);
     }
   };
 }

@@ -8,10 +8,10 @@
    * @prop --awesome-view-breakpoint-xxl: The view breakpoint for xxl. (Default: 1320)
    */
 
-  --awesome-view-breakpoint-xs: 0;
-  --awesome-view-breakpoint-sm: 540;
-  --awesome-view-breakpoint-md: 720;
-  --awesome-view-breakpoint-lg: 960;
-  --awesome-view-breakpoint-xl: 1140;
-  --awesome-view-breakpoint-xxl: 1320;
+  --awesome-view-breakpoint-xs-local: var(--awesome-view-breakpoint-xs, 0);
+  --awesome-view-breakpoint-sm-local: var(--awesome-view-breakpoint-sm, 540);
+  --awesome-view-breakpoint-md-local: var(--awesome-view-breakpoint-md, 720);
+  --awesome-view-breakpoint-lg-local: var(--awesome-view-breakpoint-lg, 960);
+  --awesome-view-breakpoint-xl-local: var(--awesome-view-breakpoint-xl, 1140);
+  --awesome-view-breakpoint-xxl-local: var(--awesome-view-breakpoint-xxl, 1320);
 }

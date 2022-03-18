@@ -10,12 +10,12 @@
    * @prop --awesome-wrap-outer-breakpoint-xl-in-px: The outer breakpoint of xl. (Default: 1200)
    * @prop --awesome-wrap-outer-breakpoint-xxl-in-px: The outer breakpoint of xxl. (Default: 1400)
    */
-  --awesome-wrap-outer-breakpoint-xs-in-px: 0;
-  --awesome-wrap-outer-breakpoint-sm-in-px: 576;
-  --awesome-wrap-outer-breakpoint-md-in-px: 768;
-  --awesome-wrap-outer-breakpoint-lg-in-px: 992;
-  --awesome-wrap-outer-breakpoint-xl-in-px: 1200;
-  --awesome-wrap-outer-breakpoint-xxl-in-px: 1400;
+  --awesome-wrap-outer-breakpoint-xs-in-px-local: var(--awesome-wrap-outer-breakpoint-xs-in-px, 0);
+  --awesome-wrap-outer-breakpoint-sm-in-px-local: var(--awesome-wrap-outer-breakpoint-sm-in-px, 576);
+  --awesome-wrap-outer-breakpoint-md-in-px-local: var(--awesome-wrap-outer-breakpoint-md-in-px, 768);
+  --awesome-wrap-outer-breakpoint-lg-in-px-local: var(--awesome-wrap-outer-breakpoint-lg-in-px, 992);
+  --awesome-wrap-outer-breakpoint-xl-in-px-local: var(--awesome-wrap-outer-breakpoint-xl-in-px, 1200);
+  --awesome-wrap-outer-breakpoint-xxl-in-px-local: var(--awesome-wrap-outer-breakpoint-xxl-in-px, 1400);
 
   /**
    * @prop --awesome-wrap-inner-breakpoint-xs: The inner breakpoint of xs. (Default: 100%)
@@ -25,12 +25,12 @@
    * @prop --awesome-wrap-inner-breakpoint-xl: The inner breakpoint of xl. (Default to the value of `--awesome-view-breakpoint-xl` with unit `px`)
    * @prop --awesome-wrap-inner-breakpoint-xxl: The inner breakpoint of xxl. (Default to the value of `--awesome-view-breakpoint-xxl` with unit `px`)
    */
-   --awesome-wrap-inner-breakpoint-xs: 100%;
-   --awesome-wrap-inner-breakpoint-sm: calc(var(--awesome-view-breakpoint-sm) * 1px);
-   --awesome-wrap-inner-breakpoint-md: calc(var(--awesome-view-breakpoint-md) * 1px);
-   --awesome-wrap-inner-breakpoint-lg: calc(var(--awesome-view-breakpoint-lg) * 1px);
-   --awesome-wrap-inner-breakpoint-xl: calc(var(--awesome-view-breakpoint-xl) * 1px);
-   --awesome-wrap-inner-breakpoint-xxl: calc(var(--awesome-view-breakpoint-xxl) * 1px);
+  --awesome-wrap-inner-breakpoint-xs-local: var(--awesome-wrap-inner-breakpoint-xs, 100%);
+  --awesome-wrap-inner-breakpoint-sm-local: var(--awesome-wrap-inner-breakpoint-sm, calc(var(--awesome-view-breakpoint-sm-local) * 1px));
+  --awesome-wrap-inner-breakpoint-md-local: var(--awesome-wrap-inner-breakpoint-md, calc(var(--awesome-view-breakpoint-md-local) * 1px));
+  --awesome-wrap-inner-breakpoint-lg-local: var(--awesome-wrap-inner-breakpoint-lg, calc(var(--awesome-view-breakpoint-lg-local) * 1px));
+  --awesome-wrap-inner-breakpoint-xl-local: var(--awesome-wrap-inner-breakpoint-xl, calc(var(--awesome-view-breakpoint-xl-local) * 1px));
+  --awesome-wrap-inner-breakpoint-xxl-local: var(--awesome-wrap-inner-breakpoint-xxl, calc(var(--awesome-view-breakpoint-xxl-local) * 1px));
 
   display: block;
 }
