@@ -8,6 +8,8 @@ CORE_PROJECT_VERSION=$(npm -s run env echo '$npm_package_version')
 CORE_PROJECT_PATH=$(pwd)
 REACT_PROJECT_PATH=./packages/react
 
+npm cache clean --force
+
 cd $REACT_PROJECT_PATH
 if npm i --save-exact @awesome-elements/layout@$CORE_PROJECT_VERSION ; then
     npm version $CORE_PROJECT_VERSION
